@@ -16,26 +16,26 @@ const StorageController = (function () {
 				percentage: -1
 			};
 
-			if (localStorage.getItem('items') === null) {
+			if (localStorage.getItem('items-budgety') === null) {
 				if (item.type === 'exp') {
 					items.allItems.exp.push(item);
 				} else if (item.type === 'inc') {
 					items.allItems.inc.push(item);
 				}
-				localStorage.setItem('items', JSON.stringify(items));
+				localStorage.setItem('items-budgety', JSON.stringify(items));
 			} else {
-				items = JSON.parse(localStorage.getItem('items'));
+				items = JSON.parse(localStorage.getItem('items-budgety'));
 				if (item.type === 'exp') {
 					items.allItems.exp.push(item);
 				} else if (item.type === 'inc') {
 					items.allItems.inc.push(item);
 				}
-				localStorage.setItem('items', JSON.stringify(items));
+				localStorage.setItem('items-budgety', JSON.stringify(items));
 			}
 		},
 		getItemsFromStorage: function () {
 			let items
-			if (localStorage.getItem('items') === null) {
+			if (localStorage.getItem('items-budgety') === null) {
 				items = {
 					allItems: {
 						exp: [],
@@ -49,12 +49,12 @@ const StorageController = (function () {
 					percentage: -1
 				};
 			} else {
-				items = JSON.parse(localStorage.getItem('items'));
+				items = JSON.parse(localStorage.getItem('items-budgety'));
 			}
 			return items;
 		},
 		deleteFromLocalStorage: function(type, id) {
-			let items = JSON.parse(localStorage.getItem('items'));
+			let items = JSON.parse(localStorage.getItem('items-budgety'));
 
 			const ids = items.allItems[type].map(item => {
 				return item.id
@@ -66,7 +66,7 @@ const StorageController = (function () {
 				items.allItems[type].splice(index, 1);
 			}
 
-			localStorage.setItem('items', JSON.stringify(items));
+			localStorage.setItem('items-budgety', JSON.stringify(items));
 		}
 	}
 
