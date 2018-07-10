@@ -203,7 +203,7 @@ const UIController = (function () {
 					`<div class="item clearfix" id="inc-${obj.id}">
 						<div class="item__description">${obj.description}</div>
 						<div class="right clearfix">
-				 			<div class="item__value">+ ${obj.value} $</div>
+				 			<div class="item__value">+ ${obj.value} PLN</div>
 				 			<div class="item__delete">
 					  			<button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
 				 			</div>
@@ -215,7 +215,7 @@ const UIController = (function () {
 					`<div class="item clearfix" id="exp-${obj.id}">
 			<div class="item__description">${obj.description}</div>
 			<div class="right clearfix">
-				 <div class="item__value">- ${obj.value} $</div>
+				 <div class="item__value">- ${obj.value} PLN</div>
 			
 				 <div class="item__delete">
 					  <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
@@ -240,7 +240,7 @@ const UIController = (function () {
 					income += `<div class="item clearfix" id="inc-${obj.id}">
           <div class="item__description">${obj.description}</div>
           <div class="right clearfix">
-             <div class="item__value">+ ${obj.value} $</div>
+             <div class="item__value">+ ${obj.value} PLN</div>
              <div class="item__delete">
                 <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
              </div>
@@ -254,7 +254,7 @@ const UIController = (function () {
 					expenses += `<div class="item clearfix" id="exp-${obj.id}">
 				 <div class="item__description">${obj.description}</div>
 				 <div class="right clearfix">
-					 <div class="item__value">- ${obj.value} $</div>
+					 <div class="item__value">- ${obj.value} PLN</div>
 					
 					 <div class="item__delete">
 						 <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
@@ -283,9 +283,9 @@ const UIController = (function () {
 
 		displayBudget: function (obj) {
 
-			document.querySelector(UISelectors.budgeLabel).textContent = obj.budget + '$';
-			document.querySelector(UISelectors.incomeLabel).textContent = '+ ' + obj.totalInc + '$';
-			document.querySelector(UISelectors.expensesLabel).textContent = '- ' + obj.totalExp + '$';
+			document.querySelector(UISelectors.budgeLabel).textContent = obj.budget + 'PLN';
+			document.querySelector(UISelectors.incomeLabel).textContent = '+ ' + obj.totalInc + 'PLN';
+			document.querySelector(UISelectors.expensesLabel).textContent = '- ' + obj.totalExp + 'PLN';
 
 
 			if (obj.percentage > 0) {
